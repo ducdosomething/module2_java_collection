@@ -1,6 +1,8 @@
 package Bt1ProductManagement;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ProductManager {
 
@@ -58,4 +60,23 @@ public class ProductManager {
         }
     }
 
+    public void sortProductByPriceAscending() {
+        Collections.sort(products, new Comparator<Product>() {
+
+            @Override
+            public int compare(Product o1, Product o2) {
+                return Double.compare(o1.getPrice(), o2.getPrice());
+            }
+        });
+    }
+
+    public void sortProductByPriceDecending() {
+        Collections.sort(products, new Comparator<Product>() {
+
+            @Override
+            public int compare(Product o1, Product o2) {
+                return Double.compare(o2.getPrice(), o1.getPrice());
+            }
+        });
+    }
 }

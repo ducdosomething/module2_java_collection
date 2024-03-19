@@ -1,5 +1,7 @@
 package Bt1ProductManagement;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
@@ -49,7 +51,16 @@ public class Main {
         productManager.deleteProductById(deleteId);
         System.out.println("Product list after delete: ");
         productManager.displayProduct();
+        System.out.println("---------------");
 
+        System.out.println("Sort Product By Price Ascending: ");
+        productManager.sortProductByPriceAscending();
+        productManager.displayProduct();
+        System.out.println("---------------");
+
+        System.out.println("Sort Product By Price Decending: ");
+        productManager.sortProductByPriceDecending();
+        productManager.displayProduct();
         scanner.close();
     }
 }
