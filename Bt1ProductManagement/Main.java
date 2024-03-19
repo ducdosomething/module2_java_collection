@@ -16,6 +16,16 @@ public class Main {
         productManager.displayProduct();
         System.out.println("---------------");
 
+        System.out.println("Enter the name of the product you want to search: ");
+        String searchName = scanner.nextLine();
+        Product founProductByName = productManager.searchProductByName(searchName);
+        if (founProductByName != null) {
+            System.out.println("Found product: " + founProductByName);
+        } else {
+            System.out.println("Product not available!");
+        }
+        System.out.println("---------------");
+
         System.out.println("Enter the ID you want to search and update: ");
         int searchId = scanner.nextInt();
         Product foundProduct = productManager.searchProductById(searchId);
@@ -32,8 +42,8 @@ public class Main {
         } else {
             System.out.println("Product not available!");
         }
-
         System.out.println("---------------");
+
         System.out.println("Enter the id of product you want to delete: ");
         int deleteId = scanner.nextInt();
         productManager.deleteProductById(deleteId);

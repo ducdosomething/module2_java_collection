@@ -30,6 +30,15 @@ public class ProductManager {
         return null;
     }
 
+    public Product searchProductByName(String searchName) {
+        for (Product product : products) {
+            if (product.getName().equals(searchName)) {
+                return product;
+            }
+        }
+        return null;
+    }
+
     public void updateProductById(int searchId, String newName, double newPrice) {
         for (Product product : products) {
             if (product.getiD() == searchId) {
