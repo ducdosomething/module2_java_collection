@@ -39,4 +39,14 @@ public class ProductManager {
             }
         }
     }
+
+    public void deleteProductById(int deleteId) {
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getiD() == deleteId) {
+                products.remove(i);
+                return;
+            }
+        }
+    }
+
 }

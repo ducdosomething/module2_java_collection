@@ -33,6 +33,13 @@ public class Main {
             System.out.println("Product not available!");
         }
 
+        System.out.println("---------------");
+        System.out.println("Enter the id of product you want to delete: ");
+        int deleteId = scanner.nextInt();
+        productManager.deleteProductById(deleteId);
+        System.out.println("Product list after delete: ");
+        productManager.displayProduct();
+
         scanner.close();
     }
 }
